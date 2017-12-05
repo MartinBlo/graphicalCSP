@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2A42627-24D9-48C1-911B-6E68614C7707}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GraphicalConstraintProgramming</RootNamespace>
+    <AssemblyName>GraphicalConstraintProgramming</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Action.cs" />
+    <Compile Include="Actions\AddConstraintAction.cs" />
+    <Compile Include="Constraints\AllDifferentConstraint.cs" />
+    <Compile Include="Constraints\AllEqualConstraint.cs" />
+    <Compile Include="Constraints\BreakSymmetryByAscendingConstraint.cs" />
+    <Compile Include="Constraints\CountXYConstraint.cs" />
+    <Compile Include="Constraints\CountXYConstraintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constraints\CountXYConstraintForm.Designer.cs">
+      <DependentUpon>CountXYConstraintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constraints\ForbiddenPatternForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constraints\ForbiddenPatternForm.Designer.cs">
+      <DependentUpon>ForbiddenPatternForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constraints\ForbiddenPatternConstraint.cs" />
+    <Compile Include="Constraints\ForwardConstraint.cs" />
+    <Compile Include="Constraints\ForbiddenPatternNonCyclicConstraint.cs" />
+    <Compile Include="Constraints\ForwardConstraintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constraints\ForwardConstraintForm.Designer.cs">
+      <DependentUpon>ForwardConstraintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constraints\ForwardConstraintNonCyclic.cs" />
+    <Compile Include="Constraints\RouteConstraint.cs" />
+    <Compile Include="Constraints\RouteConstraintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constraints\RouteConstraintForm.Designer.cs">
+      <DependentUpon>RouteConstraintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\CreateVariableAction.cs" />
+    <Compile Include="HelperTools\CellTools.cs" />
+    <Compile Include="ChangeVarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeVarForm.Designer.cs">
+      <DependentUpon>ChangeVarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperTools\OptimizationGoalHelper.cs" />
+    <Compile Include="HelperTools\SaveLoadTools.cs" />
+    <Compile Include="OptimizationGoal.cs" />
+    <Compile Include="Actions\OptToAction.cs" />
+    <Compile Include="OptToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptToForm.Designer.cs">
+      <DependentUpon>OptToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solver\ChuffedSolver.cs" />
+    <Compile Include="HelperTools\ColorTools.cs" />
+    <Compile Include="Constraints\Constraint.cs" />
+    <Compile Include="CPInstance.cs" />
+    <Compile Include="Constraints\CustomConstraint.cs" />
+    <Compile Include="Constraints\CustomConstraintInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constraints\CustomConstraintInput.Designer.cs">
+      <DependentUpon>CustomConstraintInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constraints\CustomSumConstraint.cs" />
+    <Compile Include="Constraints\CustomSumConstraintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constraints\CustomSumConstraintForm.Designer.cs">
+      <DependentUpon>CustomSumConstraintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constraints\EqualOneConstraint.cs" />
+    <Compile Include="Solver\FlatZincSolver.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solver\GecodeSolver.cs" />
+    <Compile Include="MiniZincInterface.cs" />
+    <Compile Include="NewVariableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewVariableForm.Designer.cs">
+      <DependentUpon>NewVariableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solver\ORToolsSolver.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Constraints\Set.cs" />
+    <Compile Include="Constraints\SetIntersectionAtMostOneConstraint.cs" />
+    <Compile Include="Constraints\SimpleConstraint.cs" />
+    <Compile Include="Solver\Solver.cs" />
+    <Compile Include="StringFormatTools.cs" />
+    <Compile Include="Constraints\SumLEQ1Constraint.cs" />
+    <Compile Include="UndoStack.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="WaitingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingScreen.Designer.cs">
+      <DependentUpon>WaitingScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChangeVarForm.resx">
+      <DependentUpon>ChangeVarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constraints\CountXYConstraintForm.resx">
+      <DependentUpon>CountXYConstraintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constraints\ForbiddenPatternForm.resx">
+      <DependentUpon>ForbiddenPatternForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constraints\CustomConstraintInput.resx">
+      <DependentUpon>CustomConstraintInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constraints\CustomSumConstraintForm.resx">
+      <DependentUpon>CustomSumConstraintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constraints\ForwardConstraintForm.resx">
+      <DependentUpon>ForwardConstraintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Constraints\RouteConstraintForm.resx">
+      <DependentUpon>RouteConstraintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewVariableForm.resx">
+      <DependentUpon>NewVariableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptToForm.resx">
+      <DependentUpon>OptToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WaitingScreen.resx">
+      <DependentUpon>WaitingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
